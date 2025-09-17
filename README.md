@@ -84,4 +84,4 @@ forge script script/DeployDSC.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KE
 
 ## License
 
-MIT License © 2025 Kamil Nissar
+MIT License © 2025 
