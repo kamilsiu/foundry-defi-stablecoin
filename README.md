@@ -35,6 +35,6 @@ foundry-defi-stablecoin/
 │── .github/
 │ └── workflows/
 │ └── test.yml # GitHub Actions CI
-```
 │── foundry.toml # Foundry config
 │── README.md
+```
