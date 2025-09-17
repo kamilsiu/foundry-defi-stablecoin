@@ -17,7 +17,7 @@ Inspired by MakerDAO DAI, this system only supports **WETH** and **WBTC** as col
 ---
 
 ## Project Structure
-``
+```
 foundry-defi-stablecoin/
 │── lib/ # Dependencies (forge-std, OpenZeppelin, Chainlink)
 │── script/ # Deployment scripts
@@ -35,6 +35,6 @@ foundry-defi-stablecoin/
 │── .github/
 │ └── workflows/
 │ └── test.yml # GitHub Actions CI
-``
+```
 │── foundry.toml # Foundry config
 │── README.md
