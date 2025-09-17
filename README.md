@@ -38,3 +38,50 @@ foundry-defi-stablecoin/
 │── foundry.toml # Foundry config
 │── README.md
 ```
+
+---
+
+## Installation
+
+1. Clone the repo:
+
+```
+git clone https://github.com/kamilsiu/foundry-defi-stablecoin.git
+cd foundry-defi-stablecoin
+```
+2. Install dependencies:
+```
+forge install
+```
+3. Build the project:
+```
+forge build
+```
+## Testing
+
+### Run all tests using Foundry:
+
+```
+forge test -vvv
+```
+
+## Unit tests are in test/unit/.
+
+### Fuzz & invariant tests are in test/fuzz/.
+
+## Deployment
+
+### Deploy using Foundry scripts:
+```
+forge script script/DeployDSC.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+```
+## Tech Stack
+
+1. Solidity ^0.8.19
+2. Foundry (forge, cast, anvil)
+3. OpenZeppelin Contracts
+4. Chainlink Oracles
+
+## License
+
+MIT License © 2025 Kamil Nissar
