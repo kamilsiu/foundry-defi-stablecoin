@@ -1,66 +1,87 @@
-## Foundry
+Foundry DeFi Stablecoin
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A minimal, overcollateralized, USD-pegged decentralized stablecoin built with Solidity and Foundry.
+Inspired by MakerDAO DAI, this system only supports WETH and WBTC as collateral.
 
-Foundry consists of:
+Features
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Mint & Burn Stablecoin (DSC) – Users can mint DSC against deposited collateral and burn to redeem.
 
-## Documentation
+Collateral Management – Deposit and redeem WETH & WBTC.
 
-https://book.getfoundry.sh/
+Health Factor Checks – Ensure the system remains overcollateralized.
 
-## Usage
+Liquidation Mechanism – Liquidators can seize collateral at a bonus if health factor drops.
 
-### Build
+Oracle Integration – Uses Chainlink price feeds for accurate collateral valuation.
 
-```shell
-$ forge build
-```
+Fuzzing & Invariant Tests – Ensures system safety and reliability.
 
-### Test
+Project Structure
+foundry-defi-stablecoin/
+│── lib/                     # Dependencies (forge-std, OpenZeppelin, Chainlink)
+│── script/                  # Deployment scripts
+│   └── DeployDSC.s.sol
+│── src/                     # Main contracts
+│   ├── DSCEngine.sol
+│   ├── DecentralizedStableCoin.sol
+│   └── libraries/
+│       └── OracleLib.sol
+│── test/                    # Tests
+│   ├── unit/
+│   │   └── DSCEngine.t.sol
+│   └── fuzz/
+│       └── Invariants.t.sol
+│── .github/
+│   └── workflows/
+│       └── test.yml         # GitHub Actions CI
+│── foundry.toml             # Foundry config
+│── README.md
 
-```shell
-$ forge test
-```
+Installation
 
-### Format
+Clone the repo:
 
-```shell
-$ forge fmt
-```
+git clone https://github.com/kamilsiu/foundry-defi-stablecoin.git
+cd foundry-defi-stablecoin
 
-### Gas Snapshots
 
-```shell
-$ forge snapshot
-```
+Install dependencies:
 
-### Anvil
+forge install
 
-```shell
-$ anvil
-```
 
-### Deploy
+Build the project:
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+forge build
 
-### Cast
+Testing
 
-```shell
-$ cast <subcommand>
-```
+Run all tests using Foundry:
 
-### Help
+forge test -vvv
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+
+Unit tests are in test/unit/.
+
+Fuzz & invariant tests are in test/fuzz/.
+
+Deployment
+
+Deploy using Foundry scripts:
+
+forge script script/DeployDSC.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY
+
+Tech Stack
+
+Solidity ^0.8.19
+
+Foundry (forge, cast, anvil)
+
+OpenZeppelin Contracts
+
+Chainlink Oracles
+
+License
+
+MIT License © 2025 Kamil Nissar
