@@ -59,19 +59,19 @@ forge build
 ```
 ## Testing
 
-### Run all tests using Foundry:
+Run all tests using Foundry:
 
 ```
 forge test -vvv
 ```
 
-## Unit tests are in test/unit/.
+Unit tests are in test/unit/.
 
-### Fuzz & invariant tests are in test/fuzz/.
+ Fuzz & invariant tests are in test/fuzz/.
 
 ## Deployment
 
-### Deploy using Foundry scripts:
+Deploy using Foundry scripts:
 ```
 forge script script/DeployDSC.s.sol --rpc-url $RPC_URL --private-key $PRIVATE_KEY
 ```
