@@ -18,3 +18,22 @@ Inspired by MakerDAO DAI, this system only supports **WETH** and **WBTC** as col
 
 ## Project Structure
 
+foundry-defi-stablecoin/
+│── lib/ # Dependencies (forge-std, OpenZeppelin, Chainlink)
+│── script/ # Deployment scripts
+│ └── DeployDSC.s.sol
+│── src/ # Main contracts
+│ ├── DSCEngine.sol
+│ ├── DecentralizedStableCoin.sol
+│ └── libraries/
+│ └── OracleLib.sol
+│── test/ # Tests
+│ ├── unit/
+│ │ └── DSCEngine.t.sol
+│ └── fuzz/
+│ └── Invariants.t.sol
+│── .github/
+│ └── workflows/
+│ └── test.yml # GitHub Actions CI
+│── foundry.toml # Foundry config
+│── README.md
