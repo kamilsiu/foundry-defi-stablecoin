@@ -1,7 +1,6 @@
 # Foundry DeFi Stablecoin
 
-A minimal, overcollateralized, USD-pegged decentralized stablecoin built with Solidity and Foundry.  
-Inspired by MakerDAO DAI, this system only supports **WETH** and **WBTC** as collateral.
+A minimal, overcollateralized, USD-pegged decentralized stablecoin built with Solidity and Foundry. Inspired by MakerDAO DAI, this system only supports **WETH** and **WBTC** as collateral.
 
 ---
 
